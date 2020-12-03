@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GSterczewski/fm-easybank.git"
+    "url": "git+https://github.com/GSterczewski/shortly-landing-page.git"
   },
   "keywords": [
     "shortly",
@@ -18,9 +18,9 @@
   "author": "sterczewski.dev@protonmail.ch",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GSterczewski/fm-easybank/issues"
+    "url": "https://github.com/GSterczewski/shortly-landing-page/issues"
   },
-  "homepage": "https://github.com/GSterczewski/fm-easybank#readme",
+  "homepage": "https://github.com/GSterczewski/shortly-landing-page#readme",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.13",
