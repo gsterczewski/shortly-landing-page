@@ -4,6 +4,7 @@
 @import "mixins";
 
 $tablet-breakpoint: 860px;
+$desktop-breakpoint: 1200px;
 
 body {
   overflow-x: hidden;
@@ -11,6 +12,9 @@ body {
 }
 a:hover {
   color: $color-cyan;
+  & > svg {
+    fill: $color-cyan;
+  }
 }
 
 .text-centered {
@@ -192,12 +196,44 @@ a:hover {
   }
 }
 
+@mixin delimiter($distance-x, $distance-y, $thickness) {
+  content: "";
+  position: absolute;
+  background-color: $color-cyan;
+  width: $thickness;
+  height: $distance-y;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: $desktop-breakpoint) {
+    height: $thickness;
+    width: $distance-x;
+    top: 50%;
+    left: 100%;
+    transform: translateX(0);
+  }
+}
+
 .feature-list {
   margin-top: $gap-xxl;
+
+  @media (min-width: 1200px) {
+    @include flex;
+
+    & > .feature:nth-of-type(2) {
+      margin: 30px 40px 0;
+    }
+    & > .feature:nth-of-type(3) {
+      margin-top: 60px;
+    }
+  }
 }
+
 .feature {
+  $list-gap-y: 100px;
+  $list-gap-x: 40px;
   font-size: 0.9rem;
-  $list-gap: 100px;
   background-color: $color-white;
   border-radius: 10px;
   padding: $gap-s;
@@ -205,16 +241,9 @@ a:hover {
   position: relative;
 
   &:not(:last-child) {
-    margin-bottom: $list-gap;
+    margin-bottom: $list-gap-y;
     &::after {
-      content: "";
-      height: $list-gap;
-      width: 10px;
-      background-color: $color-cyan;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
+      @include delimiter($list-gap-x, $list-gap-y, 10px);
     }
   }
 }
@@ -227,18 +256,21 @@ a:hover {
 }
 
 .boost-section {
+  @include flex(flex-start, center, column);
   margin-top: $gap-xxl;
   padding-top: $gap-xxl;
   padding-bottom: $gap-xxl;
-  @include flex(flex-start, center, column);
   background-image: url("assets/images/bg-boost-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: $color-violet;
-
   &-heading {
     color: $color-white;
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    background-image: url("assets/images/bg-boost-desktop.svg");
   }
 }
 
@@ -248,6 +280,8 @@ a:hover {
   background-color: $color-dark-violet;
   color: $color-gray-violet;
   text-align: center;
+  font-size: $font-size-s;
+
   &-heading {
     color: $color-white;
     margin-bottom: $gap-s;
@@ -256,4 +290,27 @@ a:hover {
   &-logo {
     fill: $color-white;
   }
+
+  @media (min-width: $tablet-breakpoint) {
+    @include flex(space-between);
+    &-heading {
+      margin-top: 0;
+    }
+    .socials {
+      margin: 0;
+    }
+  }
+}
+
+.socials {
+  width: 100px;
+  margin: $gap-l auto 0;
+  transform: scale(75%) translateX(-25%);
+  @include flex;
+  & > li:not(:last-child) {
+    margin-right: $gap-m;
+  }
+}
+.social-icon {
+  fill: $color-white;
 }
