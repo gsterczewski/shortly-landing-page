@@ -226,6 +226,7 @@ a:hover {
     }
   }
 }
+
 .feature {
   $list-gap-y: 100px;
   $list-gap-x: 40px;
@@ -252,18 +253,21 @@ a:hover {
 }
 
 .boost-section {
+  @include flex(flex-start, center, column);
   margin-top: $gap-xxl;
   padding-top: $gap-xxl;
   padding-bottom: $gap-xxl;
-  @include flex(flex-start, center, column);
   background-image: url("assets/images/bg-boost-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: $color-violet;
-
   &-heading {
     color: $color-white;
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    background-image: url("assets/images/bg-boost-desktop.svg");
   }
 }
 
