@@ -1,0 +1,259 @@
+@import "reset";
+@import "typography";
+@import "colors";
+@import "mixins";
+
+$tablet-breakpoint: 860px;
+
+body {
+  overflow-x: hidden;
+  background-color: #f0f1f6;
+}
+a:hover {
+  color: $color-cyan;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.header {
+  @include flex(space-between, center);
+  padding-top: $gap-l;
+  padding-bottom: $gap-l;
+  background-color: $color-white;
+}
+
+.logo {
+  height: $font-size-xxl;
+}
+.navigation {
+  @include flex(space-between, center);
+  flex-grow: 1;
+  @media (max-width: $tablet-breakpoint) {
+    display: none;
+  }
+}
+
+.navigation-list {
+  @include flex(space-between, center);
+}
+
+.navigation-item:not(:last-child),
+.logo {
+  margin-right: $gap-l;
+}
+
+.menu-btn {
+  &-bar {
+    width: 2rem;
+    height: 4px;
+    background-color: $color-gray;
+    transition: all 0.35s;
+  }
+  &-bar:nth-of-type(2) {
+    margin: 5px 0;
+  }
+
+  @media (min-width: $tablet-breakpoint+1) {
+    display: none;
+  }
+}
+
+.menu-btn--active {
+  .menu-btn-bar-2 {
+    transform: translate(50%);
+  }
+  .menu-btn-bar {
+    background-color: $color-cyan;
+  }
+}
+
+.mobile-navigation {
+  background-color: $color-violet;
+  width: 86%;
+  padding: 50px 20px;
+  text-align: center;
+  color: $color-white;
+  position: absolute;
+  top: 100px;
+  left: -100%;
+  border-radius: 7px;
+  z-index: 2;
+  transition: all 0.35s;
+  &-list {
+    text-align: center;
+  }
+  &-item {
+    & > a {
+      width: 100%;
+    }
+  }
+  &-item:not(:last-of-type) {
+    margin-bottom: $gap-m;
+  }
+
+  &-hr {
+    border-top: 1px solid $color-gray;
+    margin: $gap-l 0;
+    opacity: 0.3;
+  }
+}
+
+.mobile-navigation--active {
+  left: 7%;
+}
+
+.call-to-action {
+  width: max-content;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  color: $color-white;
+  background: $color-cyan;
+  display: inline-block;
+  &:visited {
+    color: $color-white;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.hero-section {
+  background-color: $color-white;
+  padding-top: $gap-l;
+  padding-bottom: $gap-xxxl;
+  @include flex(flex-start, center, column);
+
+  &-img {
+    width: 100vw;
+    max-width: 800px;
+    margin-left: 50px;
+  }
+
+  &-content {
+    text-align: center;
+    margin-top: $gap-l;
+  }
+
+  @media (min-width: 1000px) {
+    @include flex(center, space-between, row-reverse);
+    &-img {
+      width: 50%;
+    }
+    &-content {
+      margin-top: 0;
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+}
+
+.features-section {
+  position: relative;
+}
+
+.link-form {
+  transform: translateY(-50%);
+  padding: 4vmax;
+  background-image: url("assets/images/bg-boost-mobile.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-color: $color-violet;
+
+  border-radius: 10px;
+  margin: auto;
+  &-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+  }
+  &-button {
+    width: 100%;
+    height: 50px;
+    background-color: $color-cyan;
+    border-radius: 5px;
+    margin-top: $gap-m;
+    color: $color-white;
+    font-weight: 700;
+    font-size: $font-size-m;
+  }
+
+  @media (min-width: 700px) {
+    @include flex(space-between, center);
+    &-button {
+      width: 20%;
+      margin-top: 0;
+    }
+    &-input {
+      width: 75%;
+    }
+  }
+}
+
+.feature-list {
+  margin-top: $gap-xxl;
+}
+.feature {
+  font-size: 0.9rem;
+  $list-gap: 100px;
+  background-color: $color-white;
+  border-radius: 10px;
+  padding: $gap-s;
+  text-align: center;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $list-gap;
+    &::after {
+      content: "";
+      height: $list-gap;
+      width: 10px;
+      background-color: $color-cyan;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+.feature-logo {
+  @include flex(center, center);
+  @include circle(80px);
+  background-color: $color-violet;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
+.boost-section {
+  margin-top: $gap-xxl;
+  padding-top: $gap-xxl;
+  padding-bottom: $gap-xxl;
+  @include flex(flex-start, center, column);
+  background-image: url("assets/images/bg-boost-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $color-violet;
+
+  &-heading {
+    color: $color-white;
+  }
+}
+
+.footer {
+  padding-top: $gap-xxl;
+  padding-bottom: $gap-xxl;
+  background-color: $color-dark-violet;
+  color: $color-gray-violet;
+  text-align: center;
+  &-heading {
+    color: $color-white;
+    margin-bottom: $gap-s;
+    margin-top: $gap-l;
+  }
+  &-logo {
+    fill: $color-white;
+  }
+}
