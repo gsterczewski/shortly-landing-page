@@ -1,10 +1,5 @@
 
-
-
-
-
-
-const API = (store) => {
+const API = () => {
     const API_URL = "https://api.shrtco.de/v2/";
     const API_ERRORS = {
         1 : "URL not specified",
@@ -28,8 +23,11 @@ const API = (store) => {
     })  
     
     const handleResponse = ({code,full_short_link}) => {
-        store.save({code,full_short_link})
-        return full_short_link
+       
+        return {
+            code,
+            link:full_short_link
+        }
     }
 
     const getShortenURL = async url => {
@@ -43,33 +41,9 @@ const API = (store) => {
         return response.ok ? handleResponse(response.result) : handleError(response)
     }
     return {
-        shortenURL
+        shortenIt : shortenURL
     }   
 }
 
 
-const api = API(Store())
-
-const test = async () => {
-    let result = await  api.shortenURL("https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G")
-    console.log(result)
-}
-
-
-
-const nodes = {
-    menuBtn : document.getElementById("js-menu-btn"),
-    nav : document.getElementById("js-mobile-nav")
-}
-
-const navActiveClass = "mobile-navigation--active";
-const btnActiveClass = "menu-btn--active";
-const toggleNav = () => nodes.nav.classList.contains(navActiveClass) ? nodes.nav.classList.remove(navActiveClass) : nodes.nav.classList.add(navActiveClass);
-const toggleMenuBtn = () => nodes.menuBtn.classList.contains(btnActiveClass) ? nodes.menuBtn.classList.remove(btnActiveClass) : nodes.menuBtn.classList.add(btnActiveClass);
-
-window.onload = () => {
-    nodes.menuBtn.addEventListener("click", () => {
-        toggleNav()
-        toggleMenuBtn()
-    })
-}
+export default API

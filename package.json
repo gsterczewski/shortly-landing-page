@@ -4,7 +4,7 @@
   "description": "landing page for shortly (frontend mentor challenge)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r esm"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,14 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.13",
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-purgecss": "^3.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "mocha": "^8.2.1"
   }
 }
