@@ -78,7 +78,7 @@ a:hover {
   padding: 0.5rem 1.5rem;
   color: $color-white;
   background: $color-cyan;
-  border-radius: 7%;
+  border-radius: 5px;
   font-weight: 700;
   font-size: $font-size-s;
   &:hover {
@@ -94,7 +94,7 @@ a:hover {
 .call-to-action {
   width: max-content;
   border-radius: 25px;
-  padding: 0.5rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   color: $color-white;
   background: $color-cyan;
   display: inline-block;

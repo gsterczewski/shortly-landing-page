@@ -11,7 +11,7 @@
       <span v-if="isError" class="link-form-error">{{ errorMessage }}</span>
       <span v-if="isPending">pending....</span>
       <button
-        class="link-form-button"
+        class="button-primary link-form-button"
         @click.prevent="submit"
         :disabled="isPending"
       >
@@ -115,11 +115,8 @@ export default {
   &-button {
     width: 100%;
     height: 50px;
-    background-color: $color-cyan;
     border-radius: 5px;
     margin-top: $gap-m;
-    color: $color-white;
-    font-weight: 700;
     font-size: $font-size-m;
   }
   &-error {

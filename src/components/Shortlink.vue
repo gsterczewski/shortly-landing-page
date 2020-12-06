@@ -34,10 +34,12 @@ export default {
 
 <style lang="scss" scoped>
 .link-item {
-  padding: 10px;
-  background-color: $color-white;
   @include flex(space-between, center);
+  padding: $gap-m;
+  background-color: $color-white;
+  border-radius: 5px;
   margin-bottom: $gap-l;
+  
   &:last-of-type {
     margin-bottom: $gap-xxl;
   }
@@ -45,7 +47,7 @@ export default {
   &-title {
     margin: 0;
     color: $color-dark-violet;
-    font-weight: 500;
+    font-weight: 700;
     max-width: 40%;
     font-size: $font-size-m;
   }
@@ -59,7 +61,7 @@ export default {
 
   @media (max-width: $tablet-breakpoint) {
     @include flex-column();
-    //font-size: $font-size-m;
+   
     &-title {
       margin-bottom: $gap-m;
       max-width: 100%;
