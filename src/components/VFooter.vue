@@ -21,7 +21,7 @@
     </div>
     <ul class="socials">
       <li>
-        <a>
+        <a href="#" aria-label="facebook">
           <svg
             class="social-icon"
             width="24"
@@ -35,7 +35,7 @@
         </a>
       </li>
       <li>
-        <a>
+        <a href="#" aria-label="twitter">
           <svg
             class="social-icon"
             width="24"
@@ -49,7 +49,7 @@
         </a>
       </li>
       <li>
-        <a>
+        <a href="#" aria-label="pinterest">
           <svg
             class="social-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
         </a>
       </li>
       <li>
-        <a>
+        <a href="#" aria-label="instagram">
           <svg
             class="social-icon"
             xmlns="http://www.w3.org/2000/svg"
