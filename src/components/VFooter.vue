@@ -87,8 +87,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-  .footer {
+.footer {
   padding-top: $gap-xxl;
   padding-bottom: $gap-xxl;
   background-color: $color-dark-violet;
@@ -128,5 +127,4 @@ export default {
 .social-icon {
   fill: $color-white;
 }
-
 </style>

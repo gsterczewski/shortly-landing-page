@@ -3,23 +3,30 @@
     <form class="link-form">
       <input
         class="link-form-input"
-        :class="{'invalid' : isError}"
+        :class="{ invalid: isError }"
         type="text"
         name=""
         v-model="url"
       />
       <span v-if="isError" class="link-form-error">{{ errorMessage }}</span>
-      
+
       <button
         class="button-primary link-form-button"
         @click.prevent="submit"
         :disabled="isPending"
       >
-        Shorten It!
+        <ball-loader v-if="isPending" />
+        <span v-else>Shorten It!</span>
       </button>
     </form>
     <ul>
-      <shortlink v-for="link in links" :key="link.code" :link="link" :onCopy="onCopy" :copiedLink="copiedLink" />
+      <shortlink
+        v-for="link in links"
+        :key="link.code"
+        :link="link"
+        :onCopy="onCopy"
+        :copiedLink="copiedLink"
+      />
     </ul>
     <h2 class="text-centered">Advanced Statistics</h2>
     <p class="text-centered">
@@ -33,6 +40,7 @@
 <script>
 import FeatureList from "./FeatureList.vue";
 import Shortlink from "./Shortlink.vue";
+import BallLoader from "./BallLoader.vue";
 import useApi from "./composables/use-api";
 import useStore from "./composables/use-store";
 import scroll from "../dom/scroll";
@@ -42,34 +50,34 @@ import { ref, onBeforeMount, nextTick } from "vue";
 export default {
   name: "FeaturesSection",
   props: { features: Array },
-  components: { FeatureList, Shortlink },
+  components: { FeatureList, Shortlink, BallLoader },
   setup() {
     const url = ref("");
 
     const { fetchLink, isError, isPending, errorMessage } = useApi();
     const { links, addLink, getLink, getAllLinks } = useStore();
     const copiedLink = ref(null);
-  
+
     onBeforeMount(getAllLinks);
-   
+
     const submit = async () => {
       let link = getLink(url.value);
       if (!link) {
         link = await fetchLink(url.value);
         if (!isPending.value && !isError.value) {
           addLink(link);
-          nextTick(()=>{scroll(link.code)})
-
+          nextTick(() => {
+            scroll(link.code);
+          });
         }
       } else {
         scroll(link.code);
       }
     };
-  const onCopy = (code) => {
-    copiedLink.value = code
-    copy(`link-${copiedLink.value}`)
-
-  }
+    const onCopy = code => {
+      copiedLink.value = code;
+      copy(`link-${copiedLink.value}`);
+    };
     return {
       submit,
       isError,
@@ -85,7 +93,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .features-section {
   position: relative;
 }
@@ -94,7 +101,6 @@ export default {
   $form-padding: 30px;
   transform: translateY(-50%);
   padding: $form-padding;
-
   background-image: url("../../public/assets/images/bg-shorten-mobile.svg");
   background-size: 80%;
   background-repeat: no-repeat;
@@ -112,12 +118,23 @@ export default {
       border-color: $color-red;
     }
   }
+
+  &-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    //background-color: rgba(0,0,0,0.6);
+    //@include flex(center,center)
+  }
   &-button {
     width: 100%;
     height: 50px;
     border-radius: 5px;
     margin-top: $gap-m;
-    font-size: 0.9rem ;
+    font-size: 0.9rem;
+    position: relative;
   }
   &-error {
     position: absolute;
@@ -133,7 +150,6 @@ export default {
     &-button {
       width: 23%;
       margin-top: 0;
-      
     }
     &-input {
       width: 75%;
@@ -144,6 +160,4 @@ export default {
 .invalid {
   border-color: $color-red;
 }
-
-
 </style>

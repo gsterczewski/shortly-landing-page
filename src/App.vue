@@ -1,6 +1,7 @@
 <template>
-  <div class="wrapper" :class="{'no-scroll' : isMenuActive}">
-    <div class="overlay" v-if="isMenuActive" @click.prevent="isMenuActive = false"></div>
+  <div class="wrapper" :class="{ 'no-scroll': isMenuActive }">
+    <div class="overlay" v-if="isMenuActive" @click.prevent="toggleMenu"></div>
+
     <v-header
       :toggleMenu="toggleMenu"
       :links="links"
@@ -33,11 +34,10 @@ export default {
     let isMenuActive = ref(false);
     const toggleMenu = () => {
       isMenuActive.value = !isMenuActive.value;
-      if(isMenuActive.value){
-        document.body.classList.add("no-scroll")
-      } else{
-        document.body.classList.remove("no-scroll")
-
+      if (isMenuActive.value) {
+        document.body.classList.add("no-scroll");
+      } else {
+        document.body.classList.remove("no-scroll");
       }
     };
     return {
@@ -87,15 +87,15 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./styles/main.scss";
-  
-  .overlay{
-    position: fixed;
-    top:10%;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.3);
-    z-index:2;
-    overflow: hidden;
-  }
+@import "./styles/main.scss";
+
+.overlay {
+  position: fixed;
+  top: 12%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  overflow: hidden;
+}
 </style>

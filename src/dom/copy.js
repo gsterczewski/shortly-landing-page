@@ -1,4 +1,3 @@
-
 export default id => {
   const target = document.getElementById(id);
   const txt = document.createElement("textarea");

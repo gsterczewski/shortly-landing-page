@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .header {
+.header {
   @include flex(space-between, center);
   padding-top: $gap-l;
   padding-bottom: $gap-l;
@@ -64,23 +64,19 @@ export default {
   height: $font-size-xxl;
 }
 .navigation {
-
   @include flex(space-between, center);
   flex-grow: 1;
   @media (max-width: $tablet-breakpoint) {
     display: none;
   }
 
-&-link:hover{
-    color:$color-dark-violet;
+  &-link:hover {
+    color: $color-dark-violet;
   }
 
-&-link
-  {
-    color:$color-gray;
+  &-link {
+    color: $color-gray;
   }
-
-  
 }
 
 .navigation-list {
@@ -126,5 +122,4 @@ export default {
 .mobile-navigation--active {
   left: 7%;
 }
-
 </style>

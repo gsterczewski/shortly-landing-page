@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .boost-section {
+.boost-section {
   @include flex-column(flex-start, center);
   margin-top: $gap-xxl;
   padding-top: $gap-xxl;
