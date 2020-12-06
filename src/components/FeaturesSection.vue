@@ -1,12 +1,14 @@
 <template>
   <section class="features-section">
     <form class="link-form">
+      <label for="link input" class="hidden">Shorten link here</label>
       <input
         class="link-form-input"
         :class="{ invalid: isError }"
         type="text"
-        name=""
+         name="link input"
         v-model="url"
+        placeholder="Shorten a link here"
       />
       <span v-if="isError" class="link-form-error">{{ errorMessage }}</span>
 
@@ -113,7 +115,7 @@ export default {
     height: 50px;
     border-radius: 5px;
     margin-bottom: 12px;
-
+    padding-left:$gap-xs ;
     &:invalid {
       border-color: $color-red;
     }
