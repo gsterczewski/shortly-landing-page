@@ -4,7 +4,7 @@
     <nav class="navigation">
       <ul class="navigation-list">
         <li v-for="link in links" :key="link" class="navigation-item">
-          <a href="#">{{ link }}</a>
+          <a class="navigation-link" href="#">{{ link }}</a>
         </li>
       </ul>
       <ul class="navigation-list">
@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .header {
   @include flex(space-between, center);
   padding-top: $gap-l;
@@ -64,11 +64,23 @@ export default {
   height: $font-size-xxl;
 }
 .navigation {
+
   @include flex(space-between, center);
   flex-grow: 1;
   @media (max-width: $tablet-breakpoint) {
     display: none;
   }
+
+&-link:hover{
+    color:$color-dark-violet;
+  }
+
+&-link
+  {
+    color:$color-gray;
+  }
+
+  
 }
 
 .navigation-list {
