@@ -9,7 +9,7 @@
         v-model="url"
       />
       <span v-if="isError" class="link-form-error">{{ errorMessage }}</span>
-      <span v-if="isPending">pending....</span>
+      
       <button
         class="button-primary link-form-button"
         @click.prevent="submit"
@@ -117,7 +117,7 @@ export default {
     height: 50px;
     border-radius: 5px;
     margin-top: $gap-m;
-    font-size: $font-size-m;
+    font-size: 0.9rem ;
   }
   &-error {
     position: absolute;
@@ -131,8 +131,9 @@ export default {
     background-image: url("../../public/assets/images/bg-shorten-desktop.svg");
 
     &-button {
-      width: 20%;
+      width: 23%;
       margin-top: 0;
+      
     }
     &-input {
       width: 75%;
