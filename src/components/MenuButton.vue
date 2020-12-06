@@ -26,7 +26,14 @@ export default {
   &-bar:nth-of-type(2) {
     margin: 5px 0;
   }
-  
+  &:hover{
+    cursor: pointer;
+  }
+  &:hover{
+    .menu-btn-bar{
+      background-color: $color-cyan;
+    }
+  }    
   @media (min-width: $tablet-breakpoint+1) {
     display: none;
   }
