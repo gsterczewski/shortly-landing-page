@@ -3,7 +3,7 @@
     <form class="link-form">
       <input
         class="link-form-input"
-        :class="isError ? 'invalid' : ''"
+        :class="{'invalid' : isError}"
         type="text"
         name=""
         v-model="url"
@@ -38,7 +38,7 @@ import useStore from "./composables/use-store";
 import scroll from "../dom/scroll";
 import copy from "../dom/copy";
 
-import { ref, onBeforeMount } from "vue";
+import { ref, onBeforeMount, nextTick } from "vue";
 export default {
   name: "FeaturesSection",
   props: { features: Array },
@@ -49,14 +49,17 @@ export default {
     const { fetchLink, isError, isPending, errorMessage } = useApi();
     const { links, addLink, getLink, getAllLinks } = useStore();
     const copiedLink = ref(null);
+  
     onBeforeMount(getAllLinks);
-
+   
     const submit = async () => {
       let link = getLink(url.value);
       if (!link) {
         link = await fetchLink(url.value);
         if (!isPending.value && !isError.value) {
           addLink(link);
+          nextTick(()=>{scroll(link.code)})
+
         }
       } else {
         scroll(link.code);

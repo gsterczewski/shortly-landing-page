@@ -47,7 +47,7 @@ export default () => {
       if (request.error) {
         setError(request.error);
       } else {
-        console.log(request.result);
+        
         return extractResult(request.result.result);
       }
     } catch (err) {

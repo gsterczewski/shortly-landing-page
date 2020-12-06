@@ -6,7 +6,7 @@
       alt=""
     />
     <div class="hero-section-content">
-      <h1>More than just shorter links</h1>
+      <h1 class="hero-section-heading">More than just shorter links</h1>
       <p>
         Build your brand’s recognition and get detailed insights on how your
         links are performing.

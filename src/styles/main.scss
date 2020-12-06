@@ -146,6 +146,9 @@ a:hover {
   padding-bottom: $gap-xxxl;
   @include flex-column(flex-start, center);
 
+  &-heading {
+    font-size: $font-size-xxl;
+  }
   &-img {
     width: 100vw;
     max-width: 800px;
@@ -167,6 +170,9 @@ a:hover {
       flex-grow: 1;
       text-align: left;
     }
+    &-heading {
+      font-size: $font-size-xxxl;
+    }
   }
 }
 
@@ -179,7 +185,7 @@ a:hover {
   transform: translateY(-50%);
   padding: $form-padding;
 
-  background-image: url("../public/assets/images/bg-boost-mobile.svg");
+  background-image: url("../public/assets/images/bg-shorten-mobile.svg");
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: 100% 0;
@@ -215,6 +221,8 @@ a:hover {
   }
   @media (min-width: 700px) {
     @include flex(space-between, center);
+    background-image: url("../public/assets/images/bg-shorten-desktop.svg");
+
     &-button {
       width: 20%;
       margin-top: 0;

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import { /*onMounted,*/computed } from "vue";
-//import scroll from "../dom/scroll";
+import {computed } from "vue";
+
 export default {
   name: "Shortlink",
   props: {
@@ -19,7 +19,7 @@ export default {
     onCopy : Function
   },
   setup(props) {
-   // onMounted(() => scroll(props.link.code));
+  
    const isActive =  computed(() => props.link.code === props.copiedLink)
     const toClipboard = () => {
       props.onCopy(props.link.code)

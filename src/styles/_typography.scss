@@ -16,7 +16,8 @@ $font-size-l: $base-font-size * $font-size-scale;
 $font-size-xl: $base-font-size * $font-size-scale * $font-size-scale;
 $font-size-xxl: $base-font-size * $font-size-scale * $font-size-scale *
   $font-size-scale;
-
+$font-size-xxxl: $base-font-size * $font-size-scale * $font-size-scale *
+  $font-size-scale * $font-size-scale;
 // vertical spacing
 
 $gap-xxs: 0.375em;
