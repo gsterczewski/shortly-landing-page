@@ -56,6 +56,9 @@ a:hover {
 .no-scroll {
   overflow: hidden;
 }
+.hidden {
+  display: none;
+}
 .caption {
   font-size: $font-size-xs;
   font-weight: 400;
