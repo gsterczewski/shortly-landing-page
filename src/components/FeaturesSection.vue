@@ -1,12 +1,13 @@
 <template>
   <section class="features-section">
     <form class="link-form">
-      <label for="link input" class="hidden">Shorten link here</label>
+      <label for="link-input" class="hidden">Shorten link here</label>
       <input
         class="link-form-input"
         :class="{ invalid: isError }"
         type="text"
-         name="link input"
+         name="link-input"
+        id="link-input"
         v-model="url"
         placeholder="Shorten a link here"
       />
