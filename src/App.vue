@@ -36,7 +36,7 @@ export default {
     return {
       toggleMenu,
       isMenuActive,
-      links: ["Feaure", "Pricing", "Resources"],
+      links: ["Features", "Pricing", "Resources"],
       features: [
         {
           title: "Brand Recognition",
@@ -80,5 +80,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/main.scss";
+  @import "./styles/main.scss";
 </style>

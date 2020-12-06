@@ -84,4 +84,68 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+
+.features-section {
+  position: relative;
+}
+
+.link-form {
+  $form-padding: 30px;
+  transform: translateY(-50%);
+  padding: $form-padding;
+
+  background-image: url("../../public/assets/images/bg-shorten-mobile.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-color: $color-violet;
+  border-radius: 10px;
+
+  &-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+
+    &:invalid {
+      border-color: $color-red;
+    }
+  }
+  &-button {
+    width: 100%;
+    height: 50px;
+    background-color: $color-cyan;
+    border-radius: 5px;
+    margin-top: $gap-m;
+    color: $color-white;
+    font-weight: 700;
+    font-size: $font-size-m;
+  }
+  &-error {
+    position: absolute;
+    top: 85px;
+    left: $form-padding;
+    font-size: $font-size-s;
+    color: $color-red;
+  }
+  @media (min-width: 700px) {
+    @include flex(space-between, center);
+    background-image: url("../../public/assets/images/bg-shorten-desktop.svg");
+
+    &-button {
+      width: 20%;
+      margin-top: 0;
+    }
+    &-input {
+      width: 75%;
+      margin-bottom: 0;
+    }
+  }
+}
+.invalid {
+  border-color: $color-red;
+}
+
+
+</style>

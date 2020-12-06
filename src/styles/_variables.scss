@@ -1,5 +1,24 @@
-$primary-font: "Poppins", sans-serif;
+$color-white: hsl(0, 0%, 100%);
 
+$color-cyan: hsl(180, 66%, 49%);
+$color-violet: hsl(257, 27%, 26%);
+
+$color-red: hsl(0, 87%, 67%);
+
+$color-gray: hsl(0, 0%, 75%);
+
+$color-gray-violet: hsl(257, 7%, 63%);
+$color-dark-blue: hsl(255, 11%, 22%);
+$color-dark-violet: hsl(260, 8%, 14%);
+
+$gradient-bg: rgb(77, 155, 175);
+$gradient: linear-gradient(
+  90deg,
+  rgba(77, 155, 175, 1) 17%,
+  rgba(30, 214, 79, 1) 80%
+);
+
+$primary-font: "Poppins", sans-serif;
 $font-size: 18px;
 $horizontal-padding: 8vw;
 $section-padding: $horizontal-padding;
@@ -29,62 +48,6 @@ $gap-xl: 3.25em;
 $gap-xxl: 5.25em;
 $gap-xxxl: 8.25em;
 
-:root {
-  font-size: $font-size;
-  @media (max-width: 1000px) {
-    font-size: 17px;
-  }
-}
-body {
-  font-family: $primary-font;
-}
-
-@for $i from 1 to 5 {
-  h#{$i} {
-    margin-bottom: $gap-s;
-    font-weight: 700;
-  }
-}
-
-h1 {
-  font-size: $font-size-xxl;
-}
-h2 {
-  font-size: $font-size-xl;
-}
-h3 {
-  font-size: $font-size-l;
-}
-h4 {
-  font-size: $font-size-m;
-}
-p {
-  margin-bottom: $gap-m;
-}
-
-header,
-section,
-footer {
-  padding-left: $section-padding;
-  padding-right: $section-padding;
-}
-
-p {
-  font-size: $font-size-m;
-}
-
-.caption {
-  font-size: $font-size-xs;
-  font-weight: 400;
-  margin-bottom: $gap-s;
-}
-
-.lead-icon {
-  margin-bottom: $gap-s;
-}
-
-.truncate {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+$mobile-breakpoint: 500px;
+$tablet-breakpoint: 860px;
+$desktop-breakpoint: 1200px;

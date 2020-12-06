@@ -15,4 +15,29 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scope>
+  .menu-btn {
+  &-bar {
+    width: 2rem;
+    height: 4px;
+    background-color: $color-gray;
+    transition: all 0.35s;
+  }
+  &-bar:nth-of-type(2) {
+    margin: 5px 0;
+  }
+  
+  @media (min-width: $tablet-breakpoint+1) {
+    display: none;
+  }
+}
+
+.menu-btn--active {
+  .menu-btn-bar-2 {
+    transform: translate(50%);
+  }
+  .menu-btn-bar {
+    background-color: $color-cyan;
+  }
+}
+</style>

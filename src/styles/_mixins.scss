@@ -24,3 +24,22 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin delimiter($distance-x, $distance-y, $thickness) {
+  content: "";
+  position: absolute;
+  background-color: $color-cyan;
+  width: $thickness;
+  height: $distance-y;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: $desktop-breakpoint) {
+    height: $thickness;
+    width: $distance-x;
+    top: 50%;
+    left: 100%;
+    transform: translateX(0);
+  }
+}

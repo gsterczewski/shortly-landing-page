@@ -52,4 +52,67 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+  .header {
+  @include flex(space-between, center);
+  padding-top: $gap-l;
+  padding-bottom: $gap-l;
+  background-color: $color-white;
+}
+
+.logo {
+  height: $font-size-xxl;
+}
+.navigation {
+  @include flex(space-between, center);
+  flex-grow: 1;
+  @media (max-width: $tablet-breakpoint) {
+    display: none;
+  }
+}
+
+.navigation-list {
+  @include flex(space-between, center);
+}
+
+.navigation-item:not(:last-child),
+.logo {
+  margin-right: $gap-l;
+}
+
+.mobile-navigation {
+  background-color: $color-violet;
+  width: 86%;
+  padding: 50px 20px;
+  text-align: center;
+  color: $color-white;
+  position: absolute;
+  top: 100px;
+  left: -100%;
+  border-radius: 7px;
+  z-index: 2;
+  transition: all 0.35s;
+  &-list {
+    text-align: center;
+  }
+  &-item {
+    & > a {
+      width: 100%;
+    }
+  }
+  &-item:not(:last-of-type) {
+    margin-bottom: $gap-m;
+  }
+
+  &-hr {
+    border-top: 1px solid $color-gray;
+    margin: $gap-l 0;
+    opacity: 0.3;
+  }
+}
+
+.mobile-navigation--active {
+  left: 7%;
+}
+
+</style>

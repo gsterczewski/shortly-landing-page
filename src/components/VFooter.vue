@@ -86,4 +86,47 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+
+  .footer {
+  padding-top: $gap-xxl;
+  padding-bottom: $gap-xxl;
+  background-color: $color-dark-violet;
+  color: $color-gray-violet;
+  text-align: center;
+  font-size: $font-size-s;
+
+  &-heading {
+    color: $color-white;
+    margin-bottom: $gap-s;
+    margin-top: $gap-l;
+  }
+  &-logo {
+    fill: $color-white;
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    @include flex(space-between);
+    &-heading {
+      margin-top: 0;
+    }
+    .socials {
+      margin: 0;
+    }
+  }
+}
+
+.socials {
+  width: 100px;
+  margin: $gap-l auto 0;
+  transform: scale(75%) translateX(-25%);
+  @include flex;
+  & > li:not(:last-child) {
+    margin-right: $gap-m;
+  }
+}
+.social-icon {
+  fill: $color-white;
+}
+
+</style>
