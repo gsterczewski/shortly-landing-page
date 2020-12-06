@@ -17,7 +17,11 @@
       </ul>
     </nav>
     <menu-button @click="toggleMenu" :isMenuActive="isMenuActive" />
-    <nav class="mobile-navigation" :class="{'mobile-navigation--active': isMenuActive}" id="js-mobile-nav">
+    <nav
+      class="mobile-navigation"
+      :class="{ 'mobile-navigation--active': isMenuActive }"
+      id="js-mobile-nav"
+    >
       <ul class="mobile-navigation-list">
         <li v-for="link in links" :key="link" class="mobile-navigation-item">
           <a href="#">{{ link }}</a>

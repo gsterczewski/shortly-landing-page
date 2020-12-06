@@ -15,7 +15,9 @@ export default () => {
   const callApi = async (url, options = {}) => {
     try {
       const response = await fetch(url, options);
-      return response.ok ? success(await response.json()) : fail( await response.json());
+      return response.ok
+        ? success(await response.json())
+        : fail(await response.json());
     } catch (err) {
       return fail(err);
     }
