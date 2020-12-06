@@ -1,34 +1,49 @@
 {
-  "name": "fm-shorlty",
-  "version": "1.0.0",
-  "description": "landing page for shortly (frontend mentor challenge)",
-  "main": "index.js",
+  "name": "shortly",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GSterczewski/shortly-landing-page.git"
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "validator": "^13.5.1",
+    "vue": "^3.0.0"
   },
-  "keywords": [
-    "shortly",
-    "landing page",
-    "frontend mentor"
-  ],
-  "author": "sterczewski.dev@protonmail.ch",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GSterczewski/shortly-landing-page/issues"
-  },
-  "homepage": "https://github.com/GSterczewski/shortly-landing-page#readme",
-  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-purgecss": "^3.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-uglify": "^3.0.2"
-  }
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/prettier"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

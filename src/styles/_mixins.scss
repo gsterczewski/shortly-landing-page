@@ -4,9 +4,42 @@
   border-radius: 50%;
 }
 
-@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap) {
   display: flex;
-  flex-direction: $direction;
+  flex-direction: row;
+  flex-wrap: $wrap;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin flex-column($justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin flex-reverse($justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin delimiter($distance-x, $distance-y, $thickness) {
+  content: "";
+  position: absolute;
+  background-color: $color-cyan;
+  width: $thickness;
+  height: $distance-y;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: $desktop-breakpoint) {
+    height: $thickness;
+    width: $distance-x;
+    top: 50%;
+    left: 100%;
+    transform: translateX(0);
+  }
 }
