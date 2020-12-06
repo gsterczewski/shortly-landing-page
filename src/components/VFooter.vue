@@ -21,7 +21,7 @@
     </div>
     <ul class="socials">
       <li>
-        <a href="#">
+        <a>
           <svg
             class="social-icon"
             width="24"
@@ -35,7 +35,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <svg
             class="social-icon"
             width="24"
@@ -49,7 +49,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <svg
             class="social-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <svg
             class="social-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -129,5 +129,9 @@ export default {
 }
 .social-icon {
   fill: $color-white;
+  &:hover{
+  fill: $color-cyan;
+
+  }
 }
 </style>
