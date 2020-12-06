@@ -14,7 +14,7 @@
 
 <script>
 import { ref } from "vue";
-import VHeader from "./components/header/Header.vue";
+import VHeader from "./components/VHeader.vue";
 import HeroSection from "./components/HeroSection.vue";
 import FeaturesSection from "./components/FeaturesSection.vue";
 import BoostSection from "./components/BoostSection.vue";
