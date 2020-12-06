@@ -3,6 +3,7 @@
 @import "colors";
 @import "mixins";
 
+$mobile-breakpoint: 500px;
 $tablet-breakpoint: 860px;
 $desktop-breakpoint: 1200px;
 
@@ -107,11 +108,24 @@ a:hover {
 .mobile-navigation--active {
   left: 7%;
 }
-
+.button-primary {
+  padding: 0.5rem 1.5rem;
+  color: $color-white;
+  background: $color-cyan;
+  border-radius: 7%;
+  font-weight: 700;
+  font-size: $font-size-s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &--active {
+    background-color: $color-violet;
+  }
+}
 .call-to-action {
   width: max-content;
-  padding: 0.5rem 1.5rem;
   border-radius: 25px;
+  padding: 0.5rem 1.5rem;
   color: $color-white;
   background: $color-cyan;
   display: inline-block;
@@ -127,7 +141,7 @@ a:hover {
   background-color: $color-white;
   padding-top: $gap-l;
   padding-bottom: $gap-xxxl;
-  @include flex(flex-start, center, column);
+  @include flex-column(flex-start, center);
 
   &-img {
     width: 100vw;
@@ -141,7 +155,7 @@ a:hover {
   }
 
   @media (min-width: 1000px) {
-    @include flex(center, space-between, row-reverse);
+    @include flex-reverse(center, space-between);
     &-img {
       width: 50%;
     }
@@ -158,20 +172,26 @@ a:hover {
 }
 
 .link-form {
+  $form-padding: 30px;
   transform: translateY(-50%);
-  padding: 4vmax;
-  background-image: url("assets/images/bg-boost-mobile.svg");
+  padding: $form-padding;
+
+  background-image: url("../public/assets/images/bg-boost-mobile.svg");
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-color: $color-violet;
-
   border-radius: 10px;
-  margin: auto;
+
   &-input {
     width: 100%;
     height: 50px;
     border-radius: 5px;
+    margin-bottom: 12px;
+
+    &:invalid {
+      border-color: $color-red;
+    }
   }
   &-button {
     width: 100%;
@@ -183,7 +203,13 @@ a:hover {
     font-weight: 700;
     font-size: $font-size-m;
   }
-
+  &-error {
+    position: absolute;
+    top: 85px;
+    left: $form-padding;
+    font-size: $font-size-s;
+    color: $color-red;
+  }
   @media (min-width: 700px) {
     @include flex(space-between, center);
     &-button {
@@ -192,10 +218,13 @@ a:hover {
     }
     &-input {
       width: 75%;
+      margin-bottom: 0;
     }
   }
 }
-
+.invalid {
+  border-color: $color-red;
+}
 @mixin delimiter($distance-x, $distance-y, $thickness) {
   content: "";
   position: absolute;
@@ -212,6 +241,48 @@ a:hover {
     top: 50%;
     left: 100%;
     transform: translateX(0);
+  }
+}
+
+.link-item {
+  padding: 10px;
+  background-color: $color-white;
+  @include flex(space-between, center);
+  margin-bottom: $gap-l;
+  &:last-of-type {
+    margin-bottom: $gap-xxl;
+  }
+
+  &-title {
+    margin: 0;
+    color: $color-dark-violet;
+    font-weight: 500;
+    max-width: 40%;
+    font-size: $font-size-m;
+  }
+  &-anchor {
+    margin-right: $gap-m;
+    color: $color-cyan;
+    &:hover {
+      color: $color-violet;
+    }
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    @include flex-column();
+    //font-size: $font-size-m;
+    &-title {
+      margin-bottom: $gap-m;
+      max-width: 100%;
+      width: 100%;
+    }
+    &-group {
+      width: 100%;
+      @include flex(space-between, center);
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    //font-size: $font-size-s;
   }
 }
 
@@ -256,11 +327,11 @@ a:hover {
 }
 
 .boost-section {
-  @include flex(flex-start, center, column);
+  @include flex-column(flex-start, center);
   margin-top: $gap-xxl;
   padding-top: $gap-xxl;
   padding-bottom: $gap-xxl;
-  background-image: url("assets/images/bg-boost-mobile.svg");
+  background-image: url("../public/assets/images/bg-boost-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -270,7 +341,7 @@ a:hover {
   }
 
   @media (min-width: $tablet-breakpoint) {
-    background-image: url("assets/images/bg-boost-desktop.svg");
+    background-image: url("../public/assets/images/bg-boost-desktop.svg");
   }
 }
 

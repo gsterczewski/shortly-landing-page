@@ -4,9 +4,23 @@
   border-radius: 50%;
 }
 
-@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap) {
   display: flex;
-  flex-direction: $direction;
+  flex-direction: row;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-column($justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin flex-reverse($justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: row-reverse;
   justify-content: $justify;
   align-items: $align;
 }

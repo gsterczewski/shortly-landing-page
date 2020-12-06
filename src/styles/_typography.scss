@@ -30,6 +30,9 @@ $gap-xxxl: 8.25em;
 
 :root {
   font-size: $font-size;
+  @media (max-width: 1000px) {
+    font-size: 17px;
+  }
 }
 body {
   font-family: $primary-font;
