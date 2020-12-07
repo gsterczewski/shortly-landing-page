@@ -28,7 +28,7 @@ export default {
   padding-top: $gap-l;
   padding-bottom: $gap-xxxl;
   @include flex-column(flex-start, center);
-
+  overflow-x: hidden;
   &-heading {
     font-size: $font-size-xxl;
   }

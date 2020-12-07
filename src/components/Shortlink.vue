@@ -68,7 +68,7 @@ export default {
     color: $color-cyan;
     font-weight: 700;
 
-    &:hover {
+    &:hover,&:focus {
       color: $color-violet;
     }
   }

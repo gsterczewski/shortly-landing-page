@@ -120,6 +120,9 @@ export default {
     &:invalid {
       border-color: $color-red;
     }
+    &:focus{
+      border-bottom-color: $color-cyan;
+    }
   }
 
   &-cover {
