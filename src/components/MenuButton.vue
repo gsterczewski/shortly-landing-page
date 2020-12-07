@@ -1,9 +1,9 @@
 <template>
-  <div class="menu-btn" :class="{ 'menu-btn--active': isMenuActive }">
+  <button class="menu-btn" :class="{ 'menu-btn--active': isMenuActive }">
     <div class="menu-btn-bar menu-btn-bar-1"></div>
     <div class="menu-btn-bar menu-btn-bar-2"></div>
     <div class="menu-btn-bar menu-btn-bar-3"></div>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -17,6 +17,7 @@ export default {
 
 <style lang="scss" scope>
 .menu-btn {
+  background-color: transparent;
   &-bar {
     width: 2rem;
     height: 4px;
@@ -29,7 +30,7 @@ export default {
   &:hover {
     cursor: pointer;
   }
-  &:hover {
+  &:hover, &:focus {
     .menu-btn-bar {
       background-color: $color-cyan;
     }
