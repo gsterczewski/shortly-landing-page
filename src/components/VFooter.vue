@@ -21,7 +21,7 @@
     </div>
     <ul class="socials">
       <li>
-        <a href="#" aria-label="facebook">
+        <a href="#" aria-label="facebook" class="social-link">
           <svg
             class="social-icon"
             width="24"
@@ -35,7 +35,7 @@
         </a>
       </li>
       <li>
-        <a href="#" aria-label="twitter">
+        <a href="#" aria-label="twitter" class="social-link">
           <svg
             class="social-icon"
             width="24"
@@ -49,7 +49,7 @@
         </a>
       </li>
       <li>
-        <a href="#" aria-label="pinterest">
+        <a href="#" aria-label="pinterest" class="social-link">
           <svg
             class="social-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
         </a>
       </li>
       <li>
-        <a href="#" aria-label="instagram">
+        <a href="#" aria-label="instagram" class="social-link">
           <svg
             class="social-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -132,6 +132,11 @@ export default {
   &:hover{
   fill: $color-cyan;
 
+  }
+}
+.social-link:focus{
+  &>svg{
+    fill :$color-cyan;
   }
 }
 </style>

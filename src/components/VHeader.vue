@@ -70,7 +70,7 @@ export default {
     display: none;
   }
 
-  &-link:hover {
+  &-link:hover,&-link:focus {
     color: $color-dark-violet;
   }
 
@@ -100,12 +100,14 @@ export default {
   border-radius: 7px;
   z-index: 2;
   transition: all 0.35s;
+  visibility: hidden;
   &-list {
     text-align: center;
   }
   &-item {
     & > a {
       width: 100%;
+      
     }
   }
   &-item:not(:last-of-type) {
@@ -121,5 +123,6 @@ export default {
 
 .mobile-navigation--active {
   left: 7%;
+  visibility: visible;  
 }
 </style>
