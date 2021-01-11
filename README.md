@@ -1,6 +1,8 @@
 # Shortly
 ## Landing page for Shortly - link shortener service
 
-Built with `Vue` 
+Live -> shortly-landing-page-xi.vercel.app/
+
+Built with `Vue` `Scss`
 
 One of the Fronend Mentor challenges.
